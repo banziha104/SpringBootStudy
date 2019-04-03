@@ -1,4 +1,6 @@
-# 스프링 부트 활용
+# Application 객체 활용
+
+- 기본 사용법 
 
 ```java
 
@@ -15,5 +17,16 @@ public class Application {
     }
 }
 
-
 ```
+
+- ## 배너 커스터마이징 
+- > 시작시 배너를 커스터마이징 할 수 있음
+
+```java
+public static void main(String[] args) {
+	SpringApplication app = new SpringApplication(MySpringConfiguration.class);
+	app.setBannerMode(Banner.Mode.OFF);
+	app.run(args);
+}
+```
+
