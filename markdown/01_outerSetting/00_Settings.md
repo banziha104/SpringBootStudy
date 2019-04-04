@@ -1,17 +1,12 @@
-package lee.youngjoon;
+# 외부 설정
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.event.ApplicationStartingEvent;
-import org.springframework.context.ApplicationListener;
+- properties : 스프링 부트가 실행할떄 자동으로 로딩하는 파일. 키밸류 형태로 저장
 
-/***
- * ApplicationListener : 리스너 객체
- * ApplicationStartingEvent : 리스너 종류
- */
+```java
 public class SampleListener implements ApplicationListener<ApplicationStartingEvent> {
     @Value("${lee.name}") // application.properties 에서 설정된 키를 이용해 밸류를 주입함
     private String name;
-
+    
     @Override
     public void onApplicationEvent(ApplicationStartingEvent applicationStartingEvent) {
         System.out.println("=======================");
@@ -19,3 +14,4 @@ public class SampleListener implements ApplicationListener<ApplicationStartingEv
         System.out.println("=======================");
     }
 }
+```
